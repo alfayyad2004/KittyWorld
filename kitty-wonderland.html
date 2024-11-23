@@ -149,6 +149,25 @@
             background-color: var(--secondary-color);
             transform: scale(1.05);
         }
+        .side-kitty {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        .side-kitty.left {
+            left: 20px;
+        }
+
+        .side-kitty.right {
+            right: 20px;
+        }
 
         .features {
             display: grid;
@@ -313,6 +332,18 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
@@ -364,6 +395,8 @@
         <button class="btn fullscreen-toggle" onclick="toggleFullscreen()">Toggle Fullscreen</button>
 
         <section id="home" class="hero">
+            <img src="https://media.giphy.com/media/13U40NKpVXvYpG/giphy.gif" alt="Hello Kitty Left" class="side-kitty left">
+            <img src="https://media.giphy.com/media/12xvz9NssSkaS4/giphy.gif" alt="Hello Kitty Right" class="side-kitty right">
             <div class="hero-content">
                 <h2>Welcome to Kitty Paradise</h2>
                 <p>Explore the cutest world of Hello Kitty!</p>
@@ -371,12 +404,8 @@
             </div>
         </section>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <img src="https://media.giphy.com/media/13U40NKpVXvYpG/giphy.gif" 
-                 alt="Hello Kitty" 
-                 style="max-width: 200px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        </div>
-        
+        <img src="https://media.giphy.com/media/12xvz9NssSkaS4/giphy.gif" alt="Hello Kitty" style="display: block; max-width: 200px; margin: 40px auto; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
         <section id="clock" class="clock-container">
             <h2>Kitty Clock</h2>
             <div class="digital-clock" id="digital-clock"></div>
@@ -386,6 +415,27 @@
         <section id="prayer-times" class="feature-container">
             <h2>Prayer Times</h2>
             <div class="prayer-times" id="prayer-times"></div>
+        </section>
+
+        <section id="features" class="feature-container">
+            <h2>Awesome Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Kitty Games">
+                    <h3>Kitty Games</h3>
+                    <p>Play fun and adorable Hello Kitty games!</p>
+                </div>
+                <div class="feature-card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Kitty Collectibles">
+                    <h3>Kitty Collectibles</h3>
+                    <p>Discover rare and unique Hello Kitty items!</p>
+                </div>
+                <div class="feature-card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Kitty Friends">
+                    <h3>Kitty Friends</h3>
+                    <p>Meet all of Hello Kitty's cute friends!</p>
+                </div>
+            </div>
         </section>
 
         <section id="gallery" class="feature-container">
@@ -412,9 +462,9 @@
             </div>
             <h3>Hello Kitty GIFs</h3>
             <div class="kitty-gifs">
-                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2ZrdG1xZjNhaTNlYTJrN2N3YnM5ZHpncXlra2J0YXJ2N2E5cmRpZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/92YG8KKSjYhMc/giphy.gif" alt="Hello Kitty GIF 1" class="kitty-gif">
-                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDI2N2U5eWczdTUxYmFudWxmd2FkOTdkcHh0MGV3Y21iejFiMzltcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgJRa0hrejLxu/giphy.gif" alt="Hello Kitty GIF 2" class="kitty-gif">
-                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjcycnRmMWMwa2ptY3hxZTBrZWcyMmU1czR2NGJxcDRpdWxvd3I4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZqbBT64ECtjy/giphy.gif" alt="Hello Kitty GIF 3" class="kitty-gif">
+                <img src="https://media.giphy.com/media/l2SpMlLvxRuG5RLG0/giphy.gif" alt="Hello Kitty GIF 1" class="kitty-gif">
+                <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif" alt="Hello Kitty GIF 2" class="kitty-gif">
+                <img src="https://media.giphy.com/media/l0MYyv6UK0Bd4DE76/giphy.gif" alt="Hello Kitty GIF 3" class="kitty-gif">
             </div>
         </section>
 
@@ -432,7 +482,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mayyah's Hello Kitty Wonderland - Made by Fayyad Gosein 11/22/2024. All rights reserved.</p>
+            <p>&copy; 2023 Mayyah's Hello Kitty Wonderland. All rights reserved.</p>
         </div>
     </footer>
 

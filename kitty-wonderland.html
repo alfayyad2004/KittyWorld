@@ -149,6 +149,7 @@
             background-color: var(--secondary-color);
             transform: scale(1.05);
         }
+
         .side-kitty {
             position: absolute;
             width: 150px;
@@ -214,7 +215,8 @@
         .gallery-item img {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: white;
             transition: transform 0.3s ease;
         }
 
@@ -314,7 +316,7 @@
 
         .fullscreen-toggle {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             right: 20px;
             z-index: 1000;
         }
@@ -334,13 +336,13 @@
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+                transform: translateY(-50%);
             }
             40% {
-                transform: translateY(-20px);
+                transform: translateY(-70%);
             }
             60% {
-                transform: translateY(-10px);
+                transform: translateY(-60%);
             }
         }
 
@@ -358,8 +360,25 @@
                 margin: 5px 0;
             }
 
+            .hero {
+                height: 300px;
+            }
+
             .hero h2 {
                 font-size: 2em;
+            }
+
+            .side-kitty {
+                width: 100px;
+                height: 100px;
+            }
+
+            .side-kitty.left {
+                left: 10px;
+            }
+
+            .side-kitty.right {
+                right: 10px;
             }
 
             .digital-clock {
@@ -369,6 +388,21 @@
             .countdown {
                 font-size: 1.2em;
             }
+
+            .prayer-times {
+                grid-template-columns: 1fr;
+            }
+
+            .kitty-gif {
+                max-width: 150px;
+            }
+
+            .fullscreen-toggle {
+                bottom: 10px;
+                right: 10px;
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
@@ -376,7 +410,7 @@
     <header>
         <div class="header-bg"></div>
         <div class="container">
-            <h1>Mayyah's Hello Kitty Wonderland</h1>
+            <h1>Mayyah's Hello Kitty Wonderland 💕</h1>
         </div>
     </header>
 
@@ -399,7 +433,7 @@
             <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDJ6b2lwYTh2Y3llaGdiajMxdzl4bjJibDlvdzd0OXpsaHRlbDQyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SNUKYsygXHZxS/giphy.gif" alt="Hello Kitty Right" class="side-kitty right">
             <div class="hero-content">
                 <h2>Welcome to Kitty Paradise</h2>
-                <p>Explore the cutest world of Hello Kitty!</p>
+                <p>Made just for you Cocomelon!</p>
                 <a href="#features" class="btn">Discover More</a>
             </div>
         </section>
@@ -442,22 +476,22 @@
             <h2>Kitty Gallery</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/kitty.png?height=200&width=200" alt="Hello Kitty 1">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/kitty2.png?height=200&width=200" alt="Hello Kitty 2">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/kitty3.png?height=200&width=200" alt="Hello Kitty 3">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/kitty4.png?height=200&width=200" alt="Hello Kitty 4">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 4">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/last.png?height=200&width=200" alt="Hello Kitty 5">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 5">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://alfayyad2004.github.io/KittyWorld/last2.png?height=200&width=200" alt="Hello Kitty 6">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Hello Kitty 6">
                 </div>
             </div>
             <h3>Hello Kitty GIFs</h3>

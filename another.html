@@ -26,19 +26,12 @@
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         header {
@@ -84,11 +77,10 @@
             list-style-type: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 5px 15px;
+            margin: 0 15px;
         }
 
         nav ul li a {
@@ -142,17 +134,16 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
             background-color: var(--secondary-color);
-            transform: scale(1.05);
         }
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
@@ -219,14 +210,13 @@
             opacity: 1;
         }
 
-        .clock-container, .feature-container {
+        .clock-container {
             background-color: white;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 40px;
-            animation: slideIn 0.5s ease-out;
         }
 
         .digital-clock {
@@ -243,16 +233,17 @@
 
         .prayer-times {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .prayer-time {
-            background-color: var(--accent-color);
+            background-color: white;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .prayer-time i {
@@ -265,7 +256,7 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .kitty-gif {
@@ -276,7 +267,7 @@
         }
 
         .video-container {
-            margin-top: 20px;
+            margin-top: 40px;
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
@@ -293,24 +284,12 @@
             border-radius: 10px;
         }
 
-        .fullscreen-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
         footer {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
 
         @media (max-width: 768px) {
@@ -324,7 +303,7 @@
             }
 
             nav ul li {
-                margin: 5px 0;
+                margin: 10px 0;
             }
 
             .hero h2 {
@@ -360,9 +339,7 @@
         </ul>
     </nav>
 
-    <main class="container">
-        <button class="btn fullscreen-toggle" onclick="toggleFullscreen()">Toggle Fullscreen</button>
-
+    <main>
         <section id="home" class="hero">
             <div class="hero-content">
                 <h2>Welcome to Kitty Paradise</h2>
@@ -371,20 +348,7 @@
             </div>
         </section>
 
-        <img src="https://media.giphy.com/media/12xvz9NssSkaS4/giphy.gif" alt="Hello Kitty" style="display: block; max-width: 200px; margin: 40px auto; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-
-        <section id="clock" class="clock-container">
-            <h2>Kitty Clock</h2>
-            <div class="digital-clock" id="digital-clock"></div>
-            <div class="countdown" id="countdown"></div>
-        </section>
-
-        <section id="prayer-times" class="feature-container">
-            <h2>Prayer Times</h2>
-            <div class="prayer-times" id="prayer-times"></div>
-        </section>
-
-        <section id="features" class="feature-container">
+        <section id="features" class="container">
             <h2>Awesome Features</h2>
             <div class="features">
                 <div class="feature-card">
@@ -405,7 +369,20 @@
             </div>
         </section>
 
-        <section id="gallery" class="feature-container">
+        <section id="clock" class="container">
+            <h2>Kitty Clock</h2>
+            <div class="clock-container">
+                <div class="digital-clock" id="digital-clock"></div>
+                <div class="countdown" id="countdown"></div>
+            </div>
+        </section>
+
+        <section id="prayer-times" class="container">
+            <h2>Prayer Times</h2>
+            <div class="prayer-times" id="prayer-times"></div>
+        </section>
+
+        <section id="gallery" class="container">
             <h2>Kitty Gallery</h2>
             <div class="gallery">
                 <div class="gallery-item">
@@ -435,16 +412,12 @@
             </div>
         </section>
 
-        <section id="relax" class="feature-container">
+        <section id="relax" class="container">
             <h2>Relax with Kitty</h2>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/yIQd2Ya0Ziw" title="Rainstorm Sounds for Relaxing, Focus or Deep Sleep | Nature White Noise | 8 Hour Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </section>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" class="btn">Back to Game</a>
-        </div>
     </main>
 
     <footer>
@@ -454,108 +427,94 @@
     </footer>
 
     <script>
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-                document.body.classList.add('fullscreen');
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                    document.body.classList.remove('fullscreen');
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+
+            function updateClock() {
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                const formattedHours = hours % 12 || 12;
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                const formattedSeconds = seconds.toString().padStart(2, '0');
+                const clockElement = document.getElementById('digital-clock');
+                clockElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                let birthday = new Date(now.getFullYear(), 9, 5); // October 5th
+                if (now > birthday) {
+                    birthday = new Date(birthday.setFullYear(birthday.getFullYear() + 1));
+                }
+                const diff = birthday - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('countdown').textContent = `Mayyah's Birthday: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            function formatTime(time) {
+                const [hours, minutes] = time.split(':');
+                const formattedHours = parseInt(hours) % 12 || 12;
+                const ampm = parseInt(hours) >= 12 ? 'PM' : 'AM';
+                return `${formattedHours}:${minutes} ${ampm}`;
+            }
+
+            async function getPrayerTimes() {
+                try {
+                    const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Port of Spain&country=Trinidad and Tobago&method=1&school=1');
+                    const data = await response.json();
+                    const timings = data.data.timings;
+                    const prayerTimesElement = document.getElementById('prayer-times');
+                    const prayers = [
+                        { name: 'Fajr', icon: 'fa-sun' },
+                        { name: 'Dhuhr', icon: 'fa-sun' },
+                        { name: 'Asr', icon: 'fa-sun' },
+                        { name: 'Maghrib', icon: 'fa-moon' },
+                        { name: 'Isha', icon: 'fa-moon' }
+                    ];
+                    prayerTimesElement.innerHTML = prayers.map(prayer => `
+                        <div class="prayer-time">
+                            <i class="fas ${prayer.icon}"></i>
+                            <h3>${prayer.name}</h3>
+                            <p>${formatTime(timings[prayer.name])}</p>
+                        </div>
+                    `).join('');
+                } catch (error) {
+                    console.error('Error fetching prayer times:', error);
                 }
             }
-        }
 
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            const formattedHours = hours % 12 || 12;
-            const formattedMinutes = minutes.toString().padStart(2, '0');
-            const formattedSeconds = seconds.toString().padStart(2, '0');
-            const clockElement = document.getElementById('digital-clock');
-            clockElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
-        }
-
-        function updateCountdown() {
-            const now = new Date();
-            let birthday = new Date(now.getFullYear(), 9, 5); // October 5th
-            if (now > birthday) {
-                birthday = new Date(birthday.setFullYear(birthday.getFullYear() + 1));
-            }
-            const diff = birthday - now;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById('countdown').textContent = `Mayyah's Birthday: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        function formatTime(time) {
-            const [hours, minutes] = time.split(':');
-            const formattedHours = parseInt(hours) % 12 || 12;
-            const ampm = parseInt(hours) >= 12 ? 'PM' : 'AM';
-            return `${formattedHours}:${minutes} ${ampm}`;
-        }
-
-        async function getPrayerTimes() {
-            try {
-                const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Port of Spain&country=Trinidad and Tobago&method=1&school=1');
-                const data = await response.json();
-                const timings = data.data.timings;
-                const prayerTimesElement = document.getElementById('prayer-times');
-                const prayers = [
-                    { name: 'Fajr', icon: 'fa-sun' },
-                    { name: 'Dhuhr', icon: 'fa-sun' },
-                    { name: 'Asr', icon: 'fa-sun' },
-                    { name: 'Maghrib', icon: 'fa-moon' },
-                    { name: 'Isha', icon: 'fa-moon' }
-                ];
-                prayerTimesElement.innerHTML = prayers.map(prayer => `
-                    <div class="prayer-time">
-                        <i class="fas ${prayer.icon}"></i>
-                        <h3>${prayer.name}</h3>
-                        <p>${formatTime(timings[prayer.name])}</p>
-                    </div>
-                `).join('');
-            } catch (error) {
-                console.error('Error fetching prayer times:', error);
-            }
-        }
-
-        function init() {
             updateClock();
             updateCountdown();
             getPrayerTimes();
             setInterval(updateClock, 1000);
             setInterval(updateCountdown, 1000);
-        }
-
-        document.addEventListener('DOMContentLoaded', init);
-
-        const navLinks = document.querySelectorAll('nav a');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 60,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
         });
     </script>
 </body>
